@@ -4,4 +4,16 @@
     <string name="btn_button">Button</string>
     <string name="btn_text_view">Text View</string>
     <string name="btn_edit_text">Edit Text</string>
+    <string name="type_here">Type here:</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
+    <string name="radio1">Radio1</string>
+    <string name="radio2">Radio2</string>
+    <string name="radio3">Radio3</string>
+    <string name="enadled">Enadled</string>
+    <string name="disabled">Disabled</string>
+    <string name="switch">Switch</string>
 </resources>
