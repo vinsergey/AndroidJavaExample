@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidJavaExample</string>
+    <string name="btn_layout">Layouts</string>
+    <string name="btn_button">Button</string>
+    <string name="btn_text_view">Text View</string>
+    <string name="btn_edit_text">Edit Text</string>
 </resources>
