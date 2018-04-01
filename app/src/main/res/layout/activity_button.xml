@@ -20,17 +20,17 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio1" />
+            android:text="@string/text_radio1" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio2" />
+            android:text="@string/text_radio2" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/radio3" />
+            android:text="@string/text_radio3" />
     </RadioGroup>
 
     <LinearLayout
@@ -46,17 +46,17 @@
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/one" />
+            android:text="@string/text_one" />
 
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/two" />
+            android:text="@string/text_two" />
 
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/three" />
+            android:text="@string/text_three" />
     </LinearLayout>
 
     <Button
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:enabled="false"
-        android:text="@string/disabled"
+        android:text="@string/text_disabled"
         app:layout_constraintBaseline_toBaselineOf="@+id/button"
         app:layout_constraintStart_toEndOf="@+id/radioGroup" />
 
@@ -94,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:text="@string/switcher"
+        android:text="@string/text_switcher"
         app:layout_constraintBaseline_toBaselineOf="@+id/toggleButton"
         app:layout_constraintStart_toEndOf="@+id/toggleButton"
         tools:checked="false" />

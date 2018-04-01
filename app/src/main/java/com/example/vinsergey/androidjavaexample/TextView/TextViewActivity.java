@@ -36,7 +36,7 @@ public class TextViewActivity extends AppCompatActivity {
 
         actv = findViewById(R.id.complete);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.select_dialog_item, autos);
-        actv.setThreshold(1);
+        actv.setThreshold(0);
         actv.setAdapter(adapter);
     }
 

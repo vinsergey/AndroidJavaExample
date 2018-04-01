@@ -27,7 +27,8 @@
         <activity android:name=".Layouts.Table.TableLayoutActivity" />
         <activity android:name=".Layouts.Constraint.ConstraintLayoutActivity" />
         <activity android:name=".Layouts.Ralative.RelativeLayoutActivity" />
-        <activity android:name=".Layouts.Grid.GridLayoutActivity"></activity>
+        <activity android:name=".Layouts.Grid.GridLayoutActivity" />
+        <activity android:name=".Layouts.Linear.LinearLayoutsActivity"></activity>
     </application>
 
 </manifest>

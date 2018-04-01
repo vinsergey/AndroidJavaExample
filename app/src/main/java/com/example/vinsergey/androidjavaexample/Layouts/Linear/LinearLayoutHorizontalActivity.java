@@ -1,9 +1,11 @@
 package com.example.vinsergey.androidjavaexample.Layouts.Linear;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
+
 import com.example.vinsergey.androidjavaexample.R;
+
+import java.util.Objects;
 
 public class LinearLayoutHorizontalActivity extends AppCompatActivity {
 
@@ -13,20 +15,15 @@ public class LinearLayoutHorizontalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_horizontal);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString("horizontal");
+        setTitle(value);
 
-
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == android.R.id.home) {
-            this.finish();
-        }
-
-        return super.onOptionsItemSelected(item);
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

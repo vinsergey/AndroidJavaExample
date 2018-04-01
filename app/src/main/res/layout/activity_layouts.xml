@@ -12,31 +12,31 @@
         android:id="@+id/btn_constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_constraint_layout" />
+        android:text="@string/btn_constraint_layout" />
     <Button
         android:id="@+id/btn_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_frame_layout" />
+        android:text="@string/btn_frame_layout" />
     <Button
-        android:id="@+id/btn_Grid_layout"
+        android:id="@+id/btn_grid_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_grid_layout" />
+        android:text="@string/btn_grid_layout" />
     <Button
         android:id="@+id/btn_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_linear_layout" />
+        android:text="@string/btn_linear_layout" />
     <Button
         android:id="@+id/btn_relative_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_relative_layout" />
+        android:text="@string/btn_relative_layout" />
     <Button
         android:id="@+id/btn_table_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/text_table_layout" />
+        android:text="@string/btn_table_layout" />
 
 </LinearLayout>

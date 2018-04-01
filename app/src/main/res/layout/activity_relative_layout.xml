@@ -10,7 +10,7 @@
         android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/type_here"/>
+        android:text="@string/text_type_here"/>
 
     <EditText
         android:id="@+id/entry"
@@ -26,14 +26,14 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/entry"
         android:layout_marginStart="10dip"
-        android:text="@string/ok"
+        android:text="@string/btn_ok"
         android:background="@android:color/holo_green_light"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/ok"
         android:layout_toStartOf="@+id/ok"
-        android:text="@string/cancel"
+        android:text="@string/btn_cancel"
         android:background="@android:color/holo_green_light"/>
 
 </RelativeLayout>
