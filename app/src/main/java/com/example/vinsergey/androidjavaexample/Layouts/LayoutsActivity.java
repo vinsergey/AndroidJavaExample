@@ -1,10 +1,8 @@
-package com.example.vinsergey.androidjavaexample;
+package com.example.vinsergey.androidjavaexample.Layouts;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
+import com.example.vinsergey.androidjavaexample.R;
 
 import java.util.Objects;
 
@@ -15,24 +13,15 @@ public class LayoutsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layouts);
 
-        Intent intent = getIntent();
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString("layout");
+        setTitle(value);
 
-        if (intent != null) {
-            String value = intent.getExtras().getString("layout");
-            setTitle(value);
-        }
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationOnClickListener(v -> {
-            onBackPressed();// возврат на предыдущий activity
-        });
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
 
-    private void setSupportActionBar(Toolbar toolbar) {
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

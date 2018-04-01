@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.vinsergey.androidjavaexample.R;
 
-public class LinearWithWeightActivity extends AppCompatActivity {
+public class LinearLayoutWithWeightActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

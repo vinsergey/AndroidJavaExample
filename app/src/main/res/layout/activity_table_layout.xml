@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:stretchColumns="3"
     tools:context=".Layouts.Table.TableLayoutActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TableRow>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_button"
+            android:background="@android:color/holo_green_light"
+            android:layout_margin="3dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_button"
+            android:background="@android:color/holo_purple"
+            android:layout_margin="3dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_button"
+            android:background="@android:color/holo_green_light"
+            android:layout_margin="3dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_button"
+            android:background="@android:color/holo_purple"
+            android:layout_margin="3dp"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_button"
+            android:background="@android:color/holo_purple"
+            android:layout_margin="3dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_button"
+            android:background="@android:color/holo_green_light"
+            android:layout_margin="3dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_button"
+            android:background="@android:color/holo_green_light"
+            android:layout_margin="3dp"
+            android:layout_column="3"/>
+    </TableRow>
+
+</TableLayout>

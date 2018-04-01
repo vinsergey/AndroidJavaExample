@@ -1,8 +1,9 @@
-package com.example.vinsergey.androidjavaexample;
+package com.example.vinsergey.androidjavaexample.Buttons;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import com.example.vinsergey.androidjavaexample.R;
+import java.util.Objects;
 
 public class ButtonActivity extends AppCompatActivity {
 
@@ -11,11 +12,14 @@ public class ButtonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
 
-        Intent intent = getIntent();
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString("button");
+        setTitle(value);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+    }
 
-        if (intent != null) {
-            String value = intent.getExtras().getString("button");
-            setTitle(value);
-        }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 }

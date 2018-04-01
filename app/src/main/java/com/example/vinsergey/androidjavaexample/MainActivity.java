@@ -5,6 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.example.vinsergey.androidjavaexample.Buttons.ButtonActivity;
+import com.example.vinsergey.androidjavaexample.EditText.EditTextActivity;
+import com.example.vinsergey.androidjavaexample.Layouts.LayoutsActivity;
+import com.example.vinsergey.androidjavaexample.TextView.TextViewActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String KEY_LAYOUT = "layout";

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ButtonActivity">
+    tools:context=".Buttons.ButtonActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -29,16 +30,17 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:text="@string/radio3" />
     </RadioGroup>
 
-    <RadioGroup
-        android:id="@+id/radioGroup2"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/radioGroup"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup">
 
         <CheckBox
@@ -49,23 +51,21 @@
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:text="@string/two" />
 
         <CheckBox
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/three" />
-
-    </RadioGroup>
+    </LinearLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
+        android:layout_marginEnd="18dp"
         android:layout_marginTop="29dp"
-        android:text="@string/enadled"
+        android:text="ENABLED"
         app:layout_constraintEnd_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -84,19 +84,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="29dp"
         android:text="ToggleButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="9dp"
-        android:layout_marginStart="35dp"
-        android:text="@string/switch"
-        app:layout_constraintBottom_toBottomOf="@+id/toggleButton"
+        android:layout_marginStart="40dp"
+        android:text="@string/switcher"
+        app:layout_constraintBaseline_toBaselineOf="@+id/toggleButton"
         app:layout_constraintStart_toEndOf="@+id/toggleButton"
         tools:checked="false" />
 
@@ -104,8 +103,8 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="39dp"
+        android:layout_marginEnd="20dp"
         android:clickable="true"
         app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="@+id/imageButton"
@@ -115,10 +114,10 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton"
         app:srcCompat="@drawable/android_icon" />
 
     <!--<ImageButton-->

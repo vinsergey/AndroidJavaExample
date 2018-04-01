@@ -16,10 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LayoutsActivity" />
-        <activity android:name=".ButtonActivity" />
-        <activity android:name=".EditTextActivity" />
-        <activity android:name=".TextViewActivity"></activity>
+        <activity android:name=".Layouts.LayoutsActivity" />
+        <activity android:name=".Buttons.ButtonActivity" />
+        <activity android:name=".EditText.EditTextActivity" />
+        <activity android:name=".TextView.TextViewActivity" />
+        <activity android:name=".Layouts.Linear.LinearLayoutHorizontalActivity" />
+        <activity android:name=".Layouts.Linear.LinearLayoutVerticalActivity" />
+        <activity android:name=".Layouts.Linear.LinearLayoutWithWeightActivity" />
+        <activity android:name=".Layouts.Frame.FrameLayoutActivity" />
+        <activity android:name=".Layouts.Table.TableLayoutActivity" />
+        <activity android:name=".Layouts.Constraint.ConstraintLayoutActivity" />
+        <activity android:name=".Layouts.Ralative.RelativeLayoutActivity" />
+        <activity android:name=".Layouts.Grid.GridLayoutActivity"></activity>
     </application>
 
 </manifest>

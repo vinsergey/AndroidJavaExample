@@ -13,7 +13,15 @@
     <string name="radio1">Radio1</string>
     <string name="radio2">Radio2</string>
     <string name="radio3">Radio3</string>
-    <string name="enadled">Enadled</string>
     <string name="disabled">Disabled</string>
-    <string name="switch">Switch</string>
+    <string name="switcher">Switch</string>
+    <string name="text_view">TextView</string>
+    <string name="login">Login</string>
+    <string name="date">Date</string>
+    <string name="text_constraint_layout">Constraint Layout</string>
+    <string name="text_frame_layout">Frame Layout</string>
+    <string name="text_grid_layout">Grid Layout</string>
+    <string name="text_linear_layout">Linear Layout</string>
+    <string name="text_table_layout">Table Layout</string>
+    <string name="text_relative_layout">Relative Layout</string>
 </resources>
