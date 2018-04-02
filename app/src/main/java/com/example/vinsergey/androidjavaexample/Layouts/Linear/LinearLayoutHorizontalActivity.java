@@ -2,13 +2,10 @@ package com.example.vinsergey.androidjavaexample.Layouts.Linear;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
 import com.example.vinsergey.androidjavaexample.R;
-
 import java.util.Objects;
 
 public class LinearLayoutHorizontalActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

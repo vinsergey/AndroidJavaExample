@@ -3,7 +3,6 @@ package com.example.vinsergey.androidjavaexample.Layouts.Linear;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.vinsergey.androidjavaexample.R;
-
 import java.util.Objects;
 
 public class LinearLayoutWithWeightActivity extends AppCompatActivity {

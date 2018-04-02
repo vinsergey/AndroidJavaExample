@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
 import com.example.vinsergey.androidjavaexample.R;
-
 import java.util.Objects;
 
 public class LinearLayoutsActivity extends AppCompatActivity {
@@ -15,6 +13,9 @@ public class LinearLayoutsActivity extends AppCompatActivity {
     private static final String KEY_LINEAR_LAYOUT_HORIZONTAL = "horizontal";
     private static final String KEY_LINEAR_LAYOUT_VERTICAL = "vertical";
     private static final String KEY_LINEAR_LAYOUT_WITH_WEIGHT = "with_weight";
+    private Intent mIntent;
+    private Bundle mBundle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,8 @@ public class LinearLayoutsActivity extends AppCompatActivity {
         btnLinearLayoutHorizontal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(LinearLayoutsActivity.this, LinearLayoutHorizontalActivity.class);
-                Bundle mBundle = new Bundle();
+                mIntent = new Intent(LinearLayoutsActivity.this, LinearLayoutHorizontalActivity.class);
+                mBundle = new Bundle();
                 mBundle.putString(KEY_LINEAR_LAYOUT_HORIZONTAL, getResources().getString(R.string.btn_linear_horizontal_layout));
                 mIntent.putExtras(mBundle);
                 startActivity(mIntent);
@@ -42,8 +43,8 @@ public class LinearLayoutsActivity extends AppCompatActivity {
         btnLinearLayoutVertical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(LinearLayoutsActivity.this, LinearLayoutVerticalActivity.class);
-                Bundle mBundle = new Bundle();
+                mIntent = new Intent(LinearLayoutsActivity.this, LinearLayoutVerticalActivity.class);
+                mBundle = new Bundle();
                 mBundle.putString(KEY_LINEAR_LAYOUT_VERTICAL, getResources().getString(R.string.btn_linear_vertical_layout));
                 mIntent.putExtras(mBundle);
                 startActivity(mIntent);
@@ -53,8 +54,8 @@ public class LinearLayoutsActivity extends AppCompatActivity {
         btnLinearLayoutWithWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(LinearLayoutsActivity.this, LinearLayoutWithWeightActivity.class);
-                Bundle mBundle = new Bundle();
+                mIntent = new Intent(LinearLayoutsActivity.this, LinearLayoutWithWeightActivity.class);
+                mBundle = new Bundle();
                 mBundle.putString(KEY_LINEAR_LAYOUT_WITH_WEIGHT, getResources().getString(R.string.btn_linear_layout_with_weight));
                 mIntent.putExtras(mBundle);
                 startActivity(mIntent);
