@@ -27,4 +27,13 @@
     <string name="btn_linear_horizontal_layout">Linear Horizontal Layout</string>
     <string name="btn_linear_vertical_layout">Linear Vertical Layout</string>
     <string name="btn_linear_layout_with_weight">Linear Layout With Weight</string>
+    <string name="text_click_me">Click Me</string>
+    <string name="text_hint_name">Name</string>
+    <string name="text_hint_password">Password</string>
+    <string name="text_hint_email">Email</string>
+    <string name="text_hint_phone">Phone</string>
+    <string name="text_hint_number">Number</string>
+    <string name="text_hint_model_auto">Model Auto</string>
+    <string name="text_my_style_button">My Style Button</string>
+    <string name="text_test">Test</string>
 </resources>
