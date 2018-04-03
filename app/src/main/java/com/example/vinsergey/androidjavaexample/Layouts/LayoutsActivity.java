@@ -9,7 +9,7 @@ import com.example.vinsergey.androidjavaexample.Layouts.Constraint.ConstraintLay
 import com.example.vinsergey.androidjavaexample.Layouts.Frame.FrameLayoutActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.Grid.GridLayoutActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.Linear.LinearLayoutsActivity;
-import com.example.vinsergey.androidjavaexample.Layouts.Ralative.RelativeLayoutActivity;
+import com.example.vinsergey.androidjavaexample.Layouts.Relative.RelativeLayoutActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.Table.TableLayoutActivity;
 import com.example.vinsergey.androidjavaexample.R;
 import java.util.Objects;

@@ -31,9 +31,15 @@
     <string name="text_hint_name">Name</string>
     <string name="text_hint_password">Password</string>
     <string name="text_hint_email">Email</string>
-    <string name="text_hint_phone">Phone</string>
     <string name="text_hint_number">Number</string>
     <string name="text_hint_model_auto">Model Auto</string>
     <string name="text_my_style_button">My Style Button</string>
     <string name="text_test">Test</string>
+    <string name="text_registration">Registration</string>
+    <string name="text_hint_first_name">First Name</string>
+    <string name="text_hint_last_name">Last Name</string>
+    <string name="text_hint_phone">Phone</string>
+    <string name="text_hint_confirm_password">Confirm Password</string>
+    <string name="btn_text_logout">Logout</string>
+    <string name="text_btn_delete_user_profile">Delete user Profile</string>
 </resources>
