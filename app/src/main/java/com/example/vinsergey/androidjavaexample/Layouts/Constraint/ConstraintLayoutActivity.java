@@ -33,8 +33,7 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_constraint_layout);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString(CONSTRAINT_LAYOUT_ACTIVITY_TITLE);
-        setTitle(value);
+
 
         Button login = findViewById(R.id.btn_login);
         Button registration = findViewById(R.id.btn_registration);
@@ -69,6 +68,9 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
             mIntent = new Intent(ConstraintLayoutActivity.this, UserProfileActivity.class);
             startActivity(mIntent);
         }
+        
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(CONSTRAINT_LAYOUT_ACTIVITY_TITLE);
+        setTitle(value);
     }
 
     private boolean loadLoginUserStatus() {
