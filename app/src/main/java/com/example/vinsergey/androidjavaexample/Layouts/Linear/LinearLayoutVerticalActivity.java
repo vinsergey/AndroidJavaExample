@@ -7,12 +7,14 @@ import java.util.Objects;
 
 public class LinearLayoutVerticalActivity extends AppCompatActivity {
 
+    public static final String LINEAR_VERTICAL_LAYOUT_TITLE = "vertical";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_vertical);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("vertical");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(LINEAR_VERTICAL_LAYOUT_TITLE);
         setTitle(value);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

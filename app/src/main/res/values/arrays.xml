@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="auto">
+        <item>Audi</item>
+        <item>Renault</item>
+        <item>Mercedes-Benz</item>
+        <item>Honda</item>
+        <item>Mazda</item>
+        <item>Skoda</item>
+        <item>Nissan</item>
+        <item>Opel</item>
+        <item>Tesla</item>
+        <item>Toyota</item>
+        <item>Volvo</item>
+    </string-array>
+</resources>

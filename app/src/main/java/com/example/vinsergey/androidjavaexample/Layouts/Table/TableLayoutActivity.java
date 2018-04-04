@@ -7,12 +7,14 @@ import java.util.Objects;
 
 public class TableLayoutActivity extends AppCompatActivity {
 
+    public static final String TABLE_LAYOUT_TITLE = "table";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_layout);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("table");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(TABLE_LAYOUT_TITLE);
         setTitle(value);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

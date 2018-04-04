@@ -7,12 +7,14 @@ import java.util.Objects;
 
 public class LinearLayoutWithWeightActivity extends AppCompatActivity {
 
+    public static final String LINEAR_WHIT_WEIGHT_LAYOUT_TITLE = "with_weight";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_with_weight);
 
-        String value = getIntent().getExtras().getString("with_weight");
+        String value = getIntent().getExtras().getString(LINEAR_WHIT_WEIGHT_LAYOUT_TITLE);
         setTitle(value);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

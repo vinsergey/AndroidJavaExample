@@ -7,12 +7,14 @@ import java.util.Objects;
 
 public class LinearLayoutHorizontalActivity extends AppCompatActivity {
 
+    public static final String LINEAR_HORIZONTAL_LAYOUT_TITLE = "horizontal";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_horizontal);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("horizontal");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(LINEAR_HORIZONTAL_LAYOUT_TITLE);
         setTitle(value);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

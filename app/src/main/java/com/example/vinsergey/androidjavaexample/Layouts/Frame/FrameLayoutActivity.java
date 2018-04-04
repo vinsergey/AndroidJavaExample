@@ -8,12 +8,14 @@ import java.util.Objects;
 
 public class FrameLayoutActivity extends AppCompatActivity {
 
+    public static final String FRAME_LAYOUT_TITLE = "frame";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frame_layout);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("frame");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(FRAME_LAYOUT_TITLE);
         setTitle(value);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

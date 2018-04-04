@@ -9,12 +9,14 @@ import java.util.Objects;
 
 public class GridLayoutActivity extends AppCompatActivity {
 
+    public static final String GRIA_LAYOUT_TITLE = "grid";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_layout);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("grid");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(GRIA_LAYOUT_TITLE);
         setTitle(value);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

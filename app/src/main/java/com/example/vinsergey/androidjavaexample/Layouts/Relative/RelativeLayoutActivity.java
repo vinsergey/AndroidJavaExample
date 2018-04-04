@@ -9,12 +9,14 @@ import java.util.Objects;
 
 public class RelativeLayoutActivity extends AppCompatActivity {
 
+    public static final String RELATIVE_LAYOUT_TITLE = "relative";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_relative_layout);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("relative");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(RELATIVE_LAYOUT_TITLE);
         setTitle(value);
 
         final ImageView imageOne = findViewById(R.id.img_android_icon);

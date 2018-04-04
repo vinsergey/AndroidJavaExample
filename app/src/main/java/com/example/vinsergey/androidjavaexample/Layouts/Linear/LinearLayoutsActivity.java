@@ -13,6 +13,7 @@ public class LinearLayoutsActivity extends AppCompatActivity {
     private static final String KEY_LINEAR_LAYOUT_HORIZONTAL = "horizontal";
     private static final String KEY_LINEAR_LAYOUT_VERTICAL = "vertical";
     private static final String KEY_LINEAR_LAYOUT_WITH_WEIGHT = "with_weight";
+    public static final String LINEAR_LAYOUT_TITLE = "linear";
     private Intent mIntent;
     private Bundle mBundle;
 
@@ -22,7 +23,7 @@ public class LinearLayoutsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_layouts);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("linear");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(LINEAR_LAYOUT_TITLE);
         setTitle(value);
 
         Button btnLinearLayoutHorizontal = findViewById(R. id.btn_linear_horizontal_layout);

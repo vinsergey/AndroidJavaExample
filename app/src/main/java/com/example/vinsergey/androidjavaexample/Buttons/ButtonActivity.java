@@ -7,12 +7,14 @@ import java.util.Objects;
 
 public class ButtonActivity extends AppCompatActivity {
 
+    private static final String BUTTON_ACTIVITY_TITLE = "button";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button);
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("button");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(BUTTON_ACTIVITY_TITLE);
         setTitle(value);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
