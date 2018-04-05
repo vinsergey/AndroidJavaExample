@@ -8,19 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.vinsergey.androidjavaexample.R;
 import java.util.Objects;
-import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.ConstraintLayoutActivity.*;
+import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Constants.*;
 
 public class UserProfileActivity extends AppCompatActivity {
-
-    private TextView textFirstName, textLastName, textPhone, textLogin, textPassword;
-    private SharedPreferences sPref;
 
     private static final String PROFILE_ACTIVITY_TITLE = "User Profile";
     private static final String TEXT_BASE_DELETED = "Base Deleted!";
     private static final String KEY_CONSTRAINT_LAYOUT = "constraint";
+
+    private TextView textFirstName, textLastName, textPhone, textLogin, textPassword;
+    private SharedPreferences sPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

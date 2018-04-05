@@ -43,4 +43,6 @@
     <string name="btn_text_logout">Logout</string>
     <string name="text_btn_delete_user_profile">Delete user Profile</string>
     <string name="text_btn_destroy_base">Destroy base</string>
+    <string name="text_my_happy_text">My Happy Text</string>
+    <string name="text_click_me_now">Click Me Now!</string>
 </resources>

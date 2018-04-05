@@ -10,15 +10,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.example.vinsergey.androidjavaexample.R;
 import java.util.Objects;
-import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.ConstraintLayoutActivity.*;
+import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Constants.*;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private static final String LOGIN_ACTIVITY_TITLE = "login_user";
+    private static final String TEXT_USER_NOT_REGISTER = "User not register";
 
     private EditText input_login, input_password;
     private Intent intent;
     private SharedPreferences sPref;
-    private static final String LOGIN_ACTIVITY_TITLE = "login_user";
-    private static final String TEXT_USER_NOT_REGISTER = "User not register";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
