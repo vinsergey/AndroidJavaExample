@@ -1,5 +1,6 @@
 package com.example.vinsergey.androidjavaexample.Layouts.Constraint;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.TextInputLayout;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -51,7 +53,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         Button btnRegistration = findViewById(R.id.btn_registration_user);
 
-        shakeAnim.setInterpolator(new AccelerateInterpolator());
+        shakeAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
 
         btnRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
