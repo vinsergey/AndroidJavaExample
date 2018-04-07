@@ -53,8 +53,7 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
             }
         });
 
-        boolean checkUserStatus = loadUserStatus();
-        if (checkUserStatus) {
+        if (loadUserStatus()) {
             mIntent = new Intent(ConstraintLayoutActivity.this, UserProfileActivity.class);
             startActivity(mIntent);
         }

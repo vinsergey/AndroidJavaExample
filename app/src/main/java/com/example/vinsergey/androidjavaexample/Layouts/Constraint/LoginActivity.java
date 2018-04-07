@@ -18,7 +18,6 @@ import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Consta
 public class LoginActivity extends AppCompatActivity {
 
     private static final String LOGIN_ACTIVITY_TITLE = "login_user";
-    private static final String TEXT_USER_NOT_REGISTER = "User not register";
 
     private EditText input_login, input_password;
     private Intent intent;
@@ -35,19 +34,19 @@ public class LoginActivity extends AppCompatActivity {
         input_login = findViewById(R.id.input_login);
         input_password = findViewById(R.id.input_password);
         Button btn_login = findViewById(R.id.btn_login_user);
-        CheckBox onPass = findViewById(R.id.checkPassword);
+        //CheckBox onPass = findViewById(R.id.checkPassword);
 
-        onPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    input_password.setTransformationMethod(null);
-                } else {
-                    input_password.setTransformationMethod(new PasswordTransformationMethod());
-                }
-                input_password.setSelection(input_password.length());
-            }
-        });
+//        onPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    input_password.setTransformationMethod(null);
+//                } else {
+//                    input_password.setTransformationMethod(new PasswordTransformationMethod());
+//                }
+//                input_password.setSelection(input_password.length());
+//            }
+//        });
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                     intent = new Intent(LoginActivity.this, UserProfileActivity.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(LoginActivity.this, TEXT_USER_NOT_REGISTER, Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.text_user_not_registered), Toast.LENGTH_LONG).show();
                 }
             }
         });

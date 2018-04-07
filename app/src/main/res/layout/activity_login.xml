@@ -12,38 +12,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:ems="11"
+        android:ems="12"
         android:hint="@string/text_login"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <!--<LinearLayout-->
+        <!--android:id="@+id/input_password_layout"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/input_login">-->
+        <!--<EditText-->
+            <!--android:id="@+id/input_password"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:ems="10"-->
+            <!--android:hint="@string/hint_password"-->
+            <!--android:inputType="textPassword" />-->
+        <!--<CheckBox-->
+            <!--android:id="@+id/checkPassword"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:button="@drawable/check_box_selector"-->
+            <!--android:checked="false"/>-->
+    <!--</LinearLayout>-->
+
+
+    <android.support.design.widget.TextInputLayout
         android:id="@+id/input_password_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
+        app:passwordToggleEnabled="true"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_login">
-        <EditText
+        <android.support.design.widget.TextInputEditText
             android:id="@+id/input_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/text_hint_password"
-            android:inputType="textPassword" />
-        <CheckBox
-            android:id="@+id/checkPassword"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:button="@drawable/check_box_selector"
-            android:checked="false"/>
-    </LinearLayout>
-
+            android:ems="12"
+            android:inputType="textPassword"
+            android:hint="@string/hint_password"/>
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login_user"

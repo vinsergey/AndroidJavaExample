@@ -1,13 +1,11 @@
 package com.example.vinsergey.androidjavaexample.Layouts.Constraint;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -19,11 +17,8 @@ import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Consta
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private static final String TEXT_REGISTRATION_USER = "registration_user";
-    private static final String TEXT_USER_REGISTERED = "User already registered, sign in";
-
     private EditText firstName, lastName, phone, login, password, confirmPassword;
-    TextInputLayout firstNameLayout, lastNameLayout, phoneLayout, loginLayout, passwordLayout, confirmPasswordLayout;
+    private TextInputLayout firstNameLayout, lastNameLayout, phoneLayout, loginLayout, passwordLayout, confirmPasswordLayout;
     private Intent intent;
     private SharedPreferences sPref;
     private Animation shakeAnim;
@@ -34,7 +29,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString(TEXT_REGISTRATION_USER);
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(getString(R.string.text_registration_user));
         setTitle(value);
 
         firstName = findViewById(R.id.input_first_name_registration);
@@ -59,7 +54,7 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (loadRegistrationUserStatus()) {
-                    Toast.makeText(getApplicationContext(), TEXT_USER_REGISTERED, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.text_user_registered), Toast.LENGTH_LONG).show();
                 } else {
                     if (submitForm()) {
                         registrationNewUser();
@@ -138,8 +133,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean checkFirstName() {
         if (firstName.getText().toString().trim().isEmpty()) {
             firstNameLayout.setErrorEnabled(true);
-            firstNameLayout.setError("Enter first name");
-            firstName.setError("Valid Input Required");
+            firstNameLayout.setError(getString(R.string.text_enter_first_name));
+            firstName.setError(getString(R.string.text_valid_input_required));
             return false;
         }
         firstNameLayout.setErrorEnabled(false);
@@ -149,8 +144,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean checkLastName() {
         if (lastName.getText().toString().trim().isEmpty()) {
             lastNameLayout.setErrorEnabled(true);
-            lastNameLayout.setError("Enter last name");
-            lastName.setError("Valid Input Required");
+            lastNameLayout.setError(getString(R.string.text_enter_last_name));
+            lastName.setError(getString(R.string.text_valid_input_required));
             return false;
         }
         lastNameLayout.setErrorEnabled(false);
@@ -160,8 +155,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean checkPhone() {
         if (phone.getText().toString().trim().isEmpty()) {
             phoneLayout.setErrorEnabled(true);
-            phoneLayout.setError("Enter phone");
-            phone.setError("Valid Input Required");
+            phoneLayout.setError(getString(R.string.text_enter_phone));
+            phone.setError(getString(R.string.text_valid_input_required));
             return false;
         }
         phoneLayout.setErrorEnabled(false);
@@ -171,8 +166,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean checkLogin() {
         if (login.getText().toString().trim().isEmpty()) {
             loginLayout.setErrorEnabled(true);
-            loginLayout.setError("Enter login");
-            login.setError("Valid Input Required");
+            loginLayout.setError(getString(R.string.text_enter_login));
+            login.setError(getString(R.string.text_valid_input_required));
             return false;
         }
         loginLayout.setErrorEnabled(false);
@@ -182,8 +177,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean checkPassword() {
         if (password.getText().toString().trim().isEmpty()) {
             passwordLayout.setErrorEnabled(true);
-            passwordLayout.setError("Enter password");
-            password.setError("Valid Input Required");
+            passwordLayout.setError(getString(R.string.text_enter_password));
+            password.setError(getString(R.string.text_valid_input_required));
             return false;
         }
         passwordLayout.setErrorEnabled(false);
@@ -193,8 +188,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean checkConfirmPassword() {
         if (!password.getText().toString().equals(confirmPassword.getText().toString().trim())) {
             confirmPasswordLayout.setErrorEnabled(true);
-            confirmPasswordLayout.setError("Passwords not Equals");
-            confirmPassword.setError("Valid Input Required");
+            confirmPasswordLayout.setError(getString(R.string.text_passwords_not_equals));
+            confirmPassword.setError(getString(R.string.text_valid_input_required));
             return false;
         }
         confirmPasswordLayout.setErrorEnabled(false);

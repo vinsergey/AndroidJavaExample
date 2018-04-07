@@ -25,7 +25,7 @@
         android:layout_marginEnd="19dp"
         android:layout_marginStart="16dp"
         android:ems="10"
-        android:hint="@string/text_hint_name"
+        android:hint="@string/hint_name"
         android:inputType="none|textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/password"
         app:layout_constraintEnd_toStartOf="@+id/password"
@@ -38,7 +38,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="61dp"
         android:ems="10"
-        android:hint="@string/text_hint_password"
+        android:hint="@string/hint_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/name"
@@ -51,7 +51,7 @@
         android:layout_marginEnd="19dp"
         android:layout_marginStart="16dp"
         android:ems="10"
-        android:hint="@string/text_hint_email"
+        android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
         app:layout_constraintBaseline_toBaselineOf="@+id/phone"
         app:layout_constraintEnd_toStartOf="@+id/phone"
@@ -64,7 +64,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="18dp"
         android:ems="10"
-        android:hint="@string/text_hint_phone"
+        android:hint="@string/hint_phone"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/email"
@@ -90,7 +90,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:hint="@string/text_hint_number"
+        android:hint="@string/hint_number"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/date"
@@ -104,6 +104,6 @@
         android:layout_marginTop="37dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date"
-        android:hint="@string/text_hint_model_auto" />
+        android:hint="@string/hint_model_auto" />
 
 </android.support.constraint.ConstraintLayout>

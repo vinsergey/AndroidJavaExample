@@ -15,11 +15,12 @@ import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Consta
 public class UserProfileActivity extends AppCompatActivity {
 
     private static final String PROFILE_ACTIVITY_TITLE = "User Profile";
-    private static final String TEXT_BASE_DELETED = "Base Deleted!";
     private static final String KEY_CONSTRAINT_LAYOUT = "constraint";
 
     private TextView textFirstName, textLastName, textPhone, textLogin, textPassword;
     private SharedPreferences sPref;
+    private Intent intent;
+    private Bundle mBundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +48,8 @@ public class UserProfileActivity extends AppCompatActivity {
                 ed.putBoolean(AUTHORIZATION_USER_STATUS, false);
                 ed.apply();
                 finish();
-                Intent intent = new Intent(UserProfileActivity.this, ConstraintLayoutActivity.class);
-                Bundle mBundle = new Bundle();
+                intent = new Intent(UserProfileActivity.this, ConstraintLayoutActivity.class);
+                mBundle = new Bundle();
                 mBundle.putString(KEY_CONSTRAINT_LAYOUT, getResources().getString(R.string.btn_constraint_layout));
                 intent.putExtras(mBundle);
                 startActivity(intent);
@@ -63,8 +64,8 @@ public class UserProfileActivity extends AppCompatActivity {
                 ed.clear();
                 ed.apply();
                 finish();
-                Intent intent = new Intent(UserProfileActivity.this, ConstraintLayoutActivity.class);
-                Bundle mBundle = new Bundle();
+                intent = new Intent(UserProfileActivity.this, ConstraintLayoutActivity.class);
+                mBundle = new Bundle();
                 mBundle.putString(KEY_CONSTRAINT_LAYOUT, getResources().getString(R.string.btn_constraint_layout));
                 intent.putExtras(mBundle);
                 startActivity(intent);
@@ -78,10 +79,10 @@ public class UserProfileActivity extends AppCompatActivity {
                 SharedPreferences.Editor ed = sPref.edit();
                 ed.remove(MY_PREF);
                 if (ed.commit()) {
-                    Toast.makeText(UserProfileActivity.this, TEXT_BASE_DELETED, Toast.LENGTH_LONG).show();
+                    Toast.makeText(UserProfileActivity.this, getString(R.string.text_base_deleted), Toast.LENGTH_LONG).show();
                     finish();
-                    Intent intent = new Intent(UserProfileActivity.this, ConstraintLayoutActivity.class);
-                    Bundle mBundle = new Bundle();
+                    intent = new Intent(UserProfileActivity.this, ConstraintLayoutActivity.class);
+                    mBundle = new Bundle();
                     mBundle.putString(KEY_CONSTRAINT_LAYOUT, getResources().getString(R.string.btn_constraint_layout));
                     intent.putExtras(mBundle);
                     startActivity(intent);
@@ -92,17 +93,12 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private void loadData() {
         sPref = getSharedPreferences(MY_PREF, MODE_PRIVATE);
-        String firstNameUserField = sPref.getString(FIRST_NAME_USER_FIELD, NO_DATA);
-        String lastNameUserField = sPref.getString(LAST_NAME_USER_FIELD, NO_DATA);
-        String phoneUserField = sPref.getString(PHONE_USER_FIELD, NO_DATA);
-        String loginUserField = sPref.getString(LOGIN_USER_FIELD, NO_DATA);
-        String passwordUserField = sPref.getString(PASSWORD_USER_FIELD, NO_DATA);
 
-        textFirstName.setText(firstNameUserField);
-        textLastName.setText(lastNameUserField);
-        textPhone.setText(phoneUserField);
-        textLogin.setText(loginUserField);
-        textPassword.setText(passwordUserField);
+        textFirstName.setText(sPref.getString(FIRST_NAME_USER_FIELD, NO_DATA));
+        textLastName.setText(sPref.getString(LAST_NAME_USER_FIELD, NO_DATA));
+        textPhone.setText(sPref.getString(PHONE_USER_FIELD, NO_DATA));
+        textLogin.setText(sPref.getString(LOGIN_USER_FIELD, NO_DATA));
+        textPassword.setText(sPref.getString(PASSWORD_USER_FIELD, NO_DATA));
     }
 
     @Override

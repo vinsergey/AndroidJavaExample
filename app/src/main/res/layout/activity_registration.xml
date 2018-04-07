@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="14"
-            android:hint="@string/text_hint_first_name"
+            android:hint="@string/hint_first_name"
             android:inputType="textPersonName" />
     </android.support.design.widget.TextInputLayout>
 
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="14"
-            android:hint="@string/text_hint_last_name"
+            android:hint="@string/hint_last_name"
             android:inputType="textPersonName" />
 
     </android.support.design.widget.TextInputLayout>
@@ -58,7 +58,7 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:ems="14"
-           android:hint="@string/text_hint_phone"
+           android:hint="@string/hint_phone"
            android:inputType="phone" />
    </android.support.design.widget.TextInputLayout>
 
@@ -95,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="14"
-            android:hint="@string/text_hint_password"
+            android:hint="@string/hint_password"
             android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
 
@@ -114,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="14"
-            android:hint="@string/text_hint_confirm_password"
+            android:hint="@string/hint_confirm_password"
             android:inputType="textPassword" />
     </android.support.design.widget.TextInputLayout>
 
