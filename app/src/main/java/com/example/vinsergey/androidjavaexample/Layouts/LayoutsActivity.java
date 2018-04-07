@@ -1,10 +1,10 @@
 package com.example.vinsergey.androidjavaexample.Layouts;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import com.example.vinsergey.androidjavaexample.Layouts.Constraint.ConstraintLayoutActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.Frame.FrameLayoutActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.Grid.GridLayoutActivity;
@@ -12,6 +12,8 @@ import com.example.vinsergey.androidjavaexample.Layouts.Linear.LinearLayoutsActi
 import com.example.vinsergey.androidjavaexample.Layouts.Relative.RelativeLayoutActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.Table.TableLayoutActivity;
 import com.example.vinsergey.androidjavaexample.R;
+import com.example.vinsergey.androidjavaexample.databinding.ActivityLayoutsBinding;
+
 import java.util.Objects;
 
 public class LayoutsActivity extends AppCompatActivity {
@@ -22,6 +24,7 @@ public class LayoutsActivity extends AppCompatActivity {
     private static final String KEY_LINEAR_LAYOUT = "linear";
     private static final String KEY_RELATIVE_LAYOUT = "relative";
     private static final String KEY_TABLE_LAYOUT = "table";
+    private static final String TEXT_LAYOUT = "layout";
 
     private Intent mIntent;
     private Bundle mBundle;
@@ -29,18 +32,10 @@ public class LayoutsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_layouts);
 
-        Button btnConstraintLayout = findViewById(R.id.btn_constraint_layout);
-        Button btnFrameLayout = findViewById(R.id.btn_frame_layout);
-        Button btnGridLayout = findViewById(R.id.btn_grid_layout);
-        Button btnLinearLayout = findViewById(R.id.btn_linear_layout);
-        Button btnRelativeLayout = findViewById(R.id.btn_relative_layout);
-        Button btnTableLayout = findViewById(R.id.btn_table_layout);
+        ActivityLayoutsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_layouts);
 
-
-        btnConstraintLayout.setOnClickListener(new View.OnClickListener() {
-
+        binding.btnConstraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(LayoutsActivity.this, ConstraintLayoutActivity.class);
@@ -51,7 +46,7 @@ public class LayoutsActivity extends AppCompatActivity {
             }
         });
 
-        btnFrameLayout.setOnClickListener(new View.OnClickListener() {
+        binding.btnFrameLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(LayoutsActivity.this, FrameLayoutActivity.class);
@@ -62,7 +57,7 @@ public class LayoutsActivity extends AppCompatActivity {
             }
         });
 
-        btnGridLayout.setOnClickListener(new View.OnClickListener() {
+        binding.btnGridLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(LayoutsActivity.this, GridLayoutActivity.class);
@@ -73,7 +68,7 @@ public class LayoutsActivity extends AppCompatActivity {
             }
         });
 
-        btnLinearLayout.setOnClickListener(new View.OnClickListener() {
+        binding.btnLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(LayoutsActivity.this, LinearLayoutsActivity.class);
@@ -84,7 +79,7 @@ public class LayoutsActivity extends AppCompatActivity {
             }
         });
 
-        btnRelativeLayout.setOnClickListener(new View.OnClickListener() {
+        binding.btnRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(LayoutsActivity.this, RelativeLayoutActivity.class);
@@ -95,7 +90,7 @@ public class LayoutsActivity extends AppCompatActivity {
             }
         });
 
-        btnTableLayout.setOnClickListener(new View.OnClickListener() {
+        binding.btnTableLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(LayoutsActivity.this, TableLayoutActivity.class);
@@ -106,7 +101,7 @@ public class LayoutsActivity extends AppCompatActivity {
             }
         });
 
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString("layout");
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(TEXT_LAYOUT);
         setTitle(value);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

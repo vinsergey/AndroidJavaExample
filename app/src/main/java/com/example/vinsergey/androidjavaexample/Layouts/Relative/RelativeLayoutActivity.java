@@ -1,10 +1,13 @@
 package com.example.vinsergey.androidjavaexample.Layouts.Relative;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import com.example.vinsergey.androidjavaexample.R;
+import com.example.vinsergey.androidjavaexample.databinding.ActivityRelativeLayoutBinding;
+
 import java.util.Objects;
 
 public class RelativeLayoutActivity extends AppCompatActivity {
@@ -14,34 +17,32 @@ public class RelativeLayoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_relative_layout);
+
+        final ActivityRelativeLayoutBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_relative_layout);
+
+
+        binding.imgAndroidIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (binding.imgAndroidIcon.getVisibility() == View.VISIBLE) {
+                    binding.imgAndroidIcon.setVisibility(View.GONE);
+                    binding.imgAndroidIcon.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        binding.imgAndroidIconUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (binding.imgAndroidIconUp.getVisibility() == View.VISIBLE) {
+                    binding.imgAndroidIconUp.setVisibility(View.GONE);
+                    binding.imgAndroidIconUp.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         String value = Objects.requireNonNull(getIntent().getExtras()).getString(RELATIVE_LAYOUT_TITLE);
         setTitle(value);
-
-        final ImageView imageOne = findViewById(R.id.img_android_icon);
-        final ImageView imageTwo = findViewById(R.id.img_android_icon_up);
-
-        imageOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (imageOne.getVisibility() == View.VISIBLE) {
-                    imageOne.setVisibility(View.GONE);
-                    imageTwo.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-        imageTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (imageTwo.getVisibility() == View.VISIBLE) {
-                    imageTwo.setVisibility(View.GONE);
-                    imageOne.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
 

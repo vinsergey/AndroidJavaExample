@@ -2,55 +2,38 @@ package com.example.vinsergey.androidjavaexample.Layouts.Constraint;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.design.widget.TextInputLayout;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 import com.example.vinsergey.androidjavaexample.R;
+import com.example.vinsergey.androidjavaexample.databinding.ActivityRegistrationBinding;
 import java.util.Objects;
 import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Constants.*;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private EditText firstName, lastName, phone, login, password, confirmPassword;
-    private TextInputLayout firstNameLayout, lastNameLayout, phoneLayout, loginLayout, passwordLayout, confirmPasswordLayout;
     private Intent intent;
     private SharedPreferences sPref;
     private Animation shakeAnim;
+    private ActivityRegistrationBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         String value = Objects.requireNonNull(getIntent().getExtras()).getString(getString(R.string.text_registration_user));
         setTitle(value);
 
-        firstName = findViewById(R.id.input_first_name_registration);
-        lastName = findViewById(R.id.input_last_name_registration);
-        phone = findViewById(R.id.input_phone_registration);
-        login = findViewById(R.id.input_login_user_registration);
-        password = findViewById(R.id.input_password_user_registration);
-        confirmPassword = findViewById(R.id.input_confirm_password_registration);
-
-        firstNameLayout = findViewById(R.id.input_first_name_registration_layout);
-        lastNameLayout = findViewById(R.id.input_last_name_registration_layout);
-        phoneLayout = findViewById(R.id.input_phone_registration_layout);
-        loginLayout = findViewById(R.id.input_login_user_registration_layout);
-        passwordLayout = findViewById(R.id.input_password_user_registration_layout);
-        confirmPasswordLayout = findViewById(R.id.input_confirm_password_registration_layout);
-
-        Button btnRegistration = findViewById(R.id.btn_registration_user);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_registration);
 
         shakeAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
 
-        btnRegistration.setOnClickListener(new View.OnClickListener() {
+        binding.btnRegistrationUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (loadRegistrationUserStatus()) {
@@ -74,11 +57,11 @@ public class RegistrationActivity extends AppCompatActivity {
     private void registrationNewUser() {
         sPref = getSharedPreferences(MY_PREF, MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
-        ed.putString(FIRST_NAME_USER_FIELD, firstName.getText().toString());
-        ed.putString(LAST_NAME_USER_FIELD, lastName.getText().toString());
-        ed.putString(PHONE_USER_FIELD, phone.getText().toString());
-        ed.putString(LOGIN_USER_FIELD, login.getText().toString());
-        ed.putString(PASSWORD_USER_FIELD, password.getText().toString());
+        ed.putString(FIRST_NAME_USER_FIELD, binding.inputFirstNameRegistration.getText().toString());
+        ed.putString(LAST_NAME_USER_FIELD, binding.inputLastNameRegistration.getText().toString());
+        ed.putString(PHONE_USER_FIELD, binding.inputPhoneRegistration.getText().toString());
+        ed.putString(LOGIN_USER_FIELD, binding.inputLoginUserRegistration.getText().toString());
+        ed.putString(PASSWORD_USER_FIELD, binding.inputPasswordUserRegistration.getText().toString());
         ed.putBoolean(REGISTRATION_USER_STATUS, true);
         ed.putBoolean(AUTHORIZATION_USER_STATUS, true);
         ed.apply();
@@ -86,113 +69,113 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private boolean submitForm() {
         if (!checkFirstName()) {
-            firstName.setAnimation(shakeAnim);
-            firstName.startAnimation(shakeAnim);
+            binding.inputFirstNameRegistration.setAnimation(shakeAnim);
+            binding.inputFirstNameRegistration.startAnimation(shakeAnim);
             return false;
         }
 
         if (!checkLastName()) {
-            lastName.setAnimation(shakeAnim);
-            lastName.startAnimation(shakeAnim);
+            binding.inputLastNameRegistration.setAnimation(shakeAnim);
+            binding.inputLastNameRegistration.startAnimation(shakeAnim);
             return false;
         }
 
         if (!checkPhone()) {
-            phone.setAnimation(shakeAnim);
-            phone.startAnimation(shakeAnim);
+            binding.inputPhoneRegistration.setAnimation(shakeAnim);
+            binding.inputPhoneRegistration.startAnimation(shakeAnim);
             return false;
         }
 
         if (!checkLogin()) {
-            login.setAnimation(shakeAnim);
-            login.startAnimation(shakeAnim);
+            binding.inputLoginUserRegistration.setAnimation(shakeAnim);
+            binding.inputLoginUserRegistration.startAnimation(shakeAnim);
             return false;
         }
 
         if (!checkPassword()) {
-            password.setAnimation(shakeAnim);
-            password.startAnimation(shakeAnim);
+            binding.inputPasswordUserRegistration.setAnimation(shakeAnim);
+            binding.inputPasswordUserRegistration.startAnimation(shakeAnim);
             return false;
         }
 
         if (!checkConfirmPassword()) {
-            confirmPassword.setAnimation(shakeAnim);
-            confirmPassword.startAnimation(shakeAnim);
+            binding.inputConfirmPasswordRegistration.setAnimation(shakeAnim);
+            binding.inputConfirmPasswordRegistration.startAnimation(shakeAnim);
             return false;
         }
-        firstNameLayout.setErrorEnabled(false);
-        loginLayout.setErrorEnabled(false);
-        phoneLayout.setErrorEnabled(false);
-        loginLayout.setErrorEnabled(false);
-        passwordLayout.setErrorEnabled(false);
-        confirmPasswordLayout.setErrorEnabled(false);
+        binding.inputFirstNameRegistrationLayout.setErrorEnabled(false);
+        binding.inputLastNameRegistrationLayout.setErrorEnabled(false);
+        binding.inputPhoneRegistrationLayout.setErrorEnabled(false);
+        binding.inputLoginUserRegistrationLayout.setErrorEnabled(false);
+        binding.inputPasswordUserRegistrationLayout.setErrorEnabled(false);
+        binding.inputConfirmPasswordRegistrationLayout.setErrorEnabled(false);
 
         return true;
     }
 
     private boolean checkFirstName() {
-        if (firstName.getText().toString().trim().isEmpty()) {
-            firstNameLayout.setErrorEnabled(true);
-            firstNameLayout.setError(getString(R.string.text_enter_first_name));
-            firstName.setError(getString(R.string.text_valid_input_required));
+        if (binding.inputFirstNameRegistration.getText().toString().trim().isEmpty()) {
+            binding.inputFirstNameRegistrationLayout.setErrorEnabled(true);
+            binding.inputFirstNameRegistrationLayout.setError(getString(R.string.text_enter_first_name));
+            binding.inputFirstNameRegistration.setError(getString(R.string.text_valid_input_required));
             return false;
         }
-        firstNameLayout.setErrorEnabled(false);
+        binding.inputFirstNameRegistrationLayout.setErrorEnabled(false);
         return true;
     }
 
     private boolean checkLastName() {
-        if (lastName.getText().toString().trim().isEmpty()) {
-            lastNameLayout.setErrorEnabled(true);
-            lastNameLayout.setError(getString(R.string.text_enter_last_name));
-            lastName.setError(getString(R.string.text_valid_input_required));
+        if (binding.inputLastNameRegistration.getText().toString().trim().isEmpty()) {
+            binding.inputLastNameRegistrationLayout.setErrorEnabled(true);
+            binding.inputLastNameRegistrationLayout.setError(getString(R.string.text_enter_last_name));
+            binding.inputLastNameRegistration.setError(getString(R.string.text_valid_input_required));
             return false;
         }
-        lastNameLayout.setErrorEnabled(false);
+        binding.inputLastNameRegistrationLayout.setErrorEnabled(false);
         return true;
     }
 
     private boolean checkPhone() {
-        if (phone.getText().toString().trim().isEmpty()) {
-            phoneLayout.setErrorEnabled(true);
-            phoneLayout.setError(getString(R.string.text_enter_phone));
-            phone.setError(getString(R.string.text_valid_input_required));
+        if (binding.inputPhoneRegistration.getText().toString().trim().isEmpty()) {
+            binding.inputPhoneRegistrationLayout.setErrorEnabled(true);
+            binding.inputPhoneRegistrationLayout.setError(getString(R.string.text_enter_phone));
+            binding.inputPhoneRegistration.setError(getString(R.string.text_valid_input_required));
             return false;
         }
-        phoneLayout.setErrorEnabled(false);
+        binding.inputPhoneRegistrationLayout.setErrorEnabled(false);
         return true;
     }
 
     private boolean checkLogin() {
-        if (login.getText().toString().trim().isEmpty()) {
-            loginLayout.setErrorEnabled(true);
-            loginLayout.setError(getString(R.string.text_enter_login));
-            login.setError(getString(R.string.text_valid_input_required));
+        if (binding.inputLoginUserRegistration.getText().toString().trim().isEmpty()) {
+            binding.inputLoginUserRegistrationLayout.setErrorEnabled(true);
+            binding.inputLoginUserRegistrationLayout.setError(getString(R.string.text_enter_login));
+            binding.inputLoginUserRegistration.setError(getString(R.string.text_valid_input_required));
             return false;
         }
-        loginLayout.setErrorEnabled(false);
+        binding.inputLoginUserRegistrationLayout.setErrorEnabled(false);
         return true;
     }
 
     private boolean checkPassword() {
-        if (password.getText().toString().trim().isEmpty()) {
-            passwordLayout.setErrorEnabled(true);
-            passwordLayout.setError(getString(R.string.text_enter_password));
-            password.setError(getString(R.string.text_valid_input_required));
+        if (binding.inputPasswordUserRegistration.getText().toString().trim().isEmpty()) {
+            binding.inputPasswordUserRegistrationLayout.setErrorEnabled(true);
+            binding.inputPasswordUserRegistrationLayout.setError(getString(R.string.text_enter_password));
+            binding.inputPasswordUserRegistration.setError(getString(R.string.text_valid_input_required));
             return false;
         }
-        passwordLayout.setErrorEnabled(false);
+        binding.inputPasswordUserRegistrationLayout.setErrorEnabled(false);
         return true;
     }
 
     private boolean checkConfirmPassword() {
-        if (!password.getText().toString().equals(confirmPassword.getText().toString().trim())) {
-            confirmPasswordLayout.setErrorEnabled(true);
-            confirmPasswordLayout.setError(getString(R.string.text_passwords_not_equals));
-            confirmPassword.setError(getString(R.string.text_valid_input_required));
+        if (!binding.inputPasswordUserRegistration.getText().toString().equals(binding.inputConfirmPasswordRegistration.getText().toString().trim())) {
+            binding.inputConfirmPasswordRegistrationLayout.setErrorEnabled(true);
+            binding.inputConfirmPasswordRegistrationLayout.setError(getString(R.string.text_passwords_not_equals));
+            binding.inputConfirmPasswordRegistration.setError(getString(R.string.text_valid_input_required));
             return false;
         }
-        confirmPasswordLayout.setErrorEnabled(false);
+        binding.inputConfirmPasswordRegistrationLayout.setErrorEnabled(false);
         return true;
     }
 

@@ -2,11 +2,12 @@ package com.example.vinsergey.androidjavaexample.Layouts.Constraint;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import com.example.vinsergey.androidjavaexample.R;
+import com.example.vinsergey.androidjavaexample.databinding.ActivityConstraintLayoutBinding;
 import java.util.Objects;
 import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Constants.*;
 
@@ -22,16 +23,10 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_constraint_layout);
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        String value = Objects.requireNonNull(getIntent().getExtras()).getString(CONSTRAINT_LAYOUT_ACTIVITY_TITLE);
-        setTitle(value);
+        ActivityConstraintLayoutBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_constraint_layout);
 
-        Button login = findViewById(R.id.btn_login);
-        Button registration = findViewById(R.id.btn_registration);
-
-        login.setOnClickListener(new View.OnClickListener() {
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(ConstraintLayoutActivity.this, LoginActivity.class);
@@ -42,7 +37,7 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
             }
         });
 
-        registration.setOnClickListener(new View.OnClickListener() {
+        binding.btnRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(ConstraintLayoutActivity.this, RegistrationActivity.class);
@@ -52,6 +47,10 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
                 startActivity(mIntent);
             }
         });
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(CONSTRAINT_LAYOUT_ACTIVITY_TITLE);
+        setTitle(value);
 
         if (loadUserStatus()) {
             mIntent = new Intent(ConstraintLayoutActivity.this, UserProfileActivity.class);
