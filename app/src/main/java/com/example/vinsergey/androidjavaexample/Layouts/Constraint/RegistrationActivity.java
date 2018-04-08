@@ -169,7 +169,8 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private boolean checkConfirmPassword() {
-        if (!binding.inputPasswordUserRegistration.getText().toString().equals(binding.inputConfirmPasswordRegistration.getText().toString().trim())) {
+        if (!binding.inputPasswordUserRegistration.getText().toString()
+                .equals(binding.inputConfirmPasswordRegistration.getText().toString().trim())) {
             binding.inputConfirmPasswordRegistrationLayout.setErrorEnabled(true);
             binding.inputConfirmPasswordRegistrationLayout.setError(getString(R.string.text_passwords_not_equals));
             binding.inputConfirmPasswordRegistration.setError(getString(R.string.text_valid_input_required));

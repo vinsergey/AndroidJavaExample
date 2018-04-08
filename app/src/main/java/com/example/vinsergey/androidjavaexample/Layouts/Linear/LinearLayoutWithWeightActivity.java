@@ -14,7 +14,7 @@ public class LinearLayoutWithWeightActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linear_with_weight);
 
-        String value = getIntent().getExtras().getString(LINEAR_WHIT_WEIGHT_LAYOUT_TITLE);
+        String value = Objects.requireNonNull(getIntent().getExtras()).getString(LINEAR_WHIT_WEIGHT_LAYOUT_TITLE);
         setTitle(value);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

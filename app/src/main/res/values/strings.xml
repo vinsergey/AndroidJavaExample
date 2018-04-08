@@ -63,4 +63,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="text_toggle_button">ToggleButton</string>
+    <string name="text_enabled">ENABLED</string>
 </resources>

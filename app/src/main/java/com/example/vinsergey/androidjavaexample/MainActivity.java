@@ -1,14 +1,15 @@
 package com.example.vinsergey.androidjavaexample;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import com.example.vinsergey.androidjavaexample.Buttons.ButtonActivity;
 import com.example.vinsergey.androidjavaexample.EditText.EditTextActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.LayoutsActivity;
 import com.example.vinsergey.androidjavaexample.TextView.TextViewActivity;
+import com.example.vinsergey.androidjavaexample.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,14 +24,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        Button btnLayouts = findViewById(R.id.btn_layouts);
-        Button btnButton = findViewById(R.id.btn_button);
-        Button btnTextView = findViewById(R.id.btn_text_view);
-        Button btnEditText = findViewById(R.id.btn_edit_text);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        btnLayouts.setOnClickListener(new View.OnClickListener() {
+        binding.btnLayouts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(MainActivity.this, LayoutsActivity.class);
@@ -41,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnButton.setOnClickListener(new View.OnClickListener() {
+        binding.btnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(MainActivity.this, ButtonActivity.class);
@@ -52,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnTextView.setOnClickListener(new View.OnClickListener() {
+        binding.btnTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(MainActivity.this, TextViewActivity.class);
@@ -63,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnEditText.setOnClickListener(new View.OnClickListener() {
+        binding.btnEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mIntent = new Intent(MainActivity.this, EditTextActivity.class);
