@@ -83,7 +83,10 @@ public class MainDrawerActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_light_theme) {
+            //TODO changer style
+            return true;
+        } else if (id == R.id.action_dark_theme) {
             return true;
         }
 
