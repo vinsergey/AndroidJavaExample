@@ -1,5 +1,7 @@
 package com.example.vinsergey.androidjavaexample;
 
+import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,13 +15,29 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.vinsergey.androidjavaexample.Buttons.ButtonActivity;
+import com.example.vinsergey.androidjavaexample.EditText.EditTextActivity;
+import com.example.vinsergey.androidjavaexample.Layouts.LayoutsActivity;
+import com.example.vinsergey.androidjavaexample.TextView.TextViewActivity;
+import com.example.vinsergey.androidjavaexample.databinding.ActivityMainDrawerBinding;
+
 public class MainDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final String KEY_LAYOUT = "layout";
+    private static final String KEY_BUTTON = "button";
+    private static final String KEY_TEXT_VIEW = "text_view";
+    private static final String KEY_EDIT_TEXT = "edit_text";
+
+    private ActivityMainDrawerBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_drawer);
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main_drawer);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -38,15 +56,13 @@ public class MainDrawerActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        binding.navView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            binding.drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
@@ -80,22 +96,35 @@ public class MainDrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        Intent mIntent;
+        Bundle mBundle;
+        if (id == R.id.nav_layout) {
+            mIntent = new Intent(this, LayoutsActivity.class);
+            mBundle = new Bundle();
+            mBundle.putString(KEY_LAYOUT, getResources().getString(R.string.btn_layout));
+            mIntent.putExtras(mBundle);
+            startActivity(mIntent);
+        } else if (id == R.id.nav_button) {
+            mIntent = new Intent(this, ButtonActivity.class);
+            mBundle = new Bundle();
+            mBundle.putString(KEY_BUTTON, getResources().getString(R.string.btn_button));
+            mIntent.putExtras(mBundle);
+            startActivity(mIntent);
+        } else if (id == R.id.nav_text_view) {
+            mIntent = new Intent(this, TextViewActivity.class);
+            mBundle = new Bundle();
+            mBundle.putString(KEY_TEXT_VIEW, getResources().getString(R.string.btn_text_view));
+            mIntent.putExtras(mBundle);
+            startActivity(mIntent);
+        } else if (id == R.id.nav_edit_text) {
+            mIntent = new Intent(this, EditTextActivity.class);
+            mBundle = new Bundle();
+            mBundle.putString(KEY_EDIT_TEXT, getResources().getString(R.string.btn_edit_text));
+            mIntent.putExtras(mBundle);
+            startActivity(mIntent);
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        binding.drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }

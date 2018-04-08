@@ -11,6 +11,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
+                <action android:name="android.intent.action.ANSWER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainDrawerActivity"
+            android:label="@string/title_activity_main_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -32,10 +42,7 @@
         <activity android:name=".Layouts.Constraint.LoginActivity" />
         <activity android:name=".Layouts.Constraint.RegistrationActivity" />
         <activity android:name=".Layouts.Constraint.UserProfileActivity" />
-        <activity
-            android:name=".MainDrawerActivity"
-            android:label="@string/title_activity_main_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>
