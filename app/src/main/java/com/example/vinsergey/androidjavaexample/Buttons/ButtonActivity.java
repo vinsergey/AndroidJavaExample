@@ -15,6 +15,8 @@ public class ButtonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //setTheme(R.style.AppThemeDark);
+
         ActivityButtonBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_button);
 
         String value = Objects.requireNonNull(getIntent().getExtras()).getString(BUTTON_ACTIVITY_TITLE);

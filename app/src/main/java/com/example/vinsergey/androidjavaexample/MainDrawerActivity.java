@@ -14,12 +14,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.example.vinsergey.androidjavaexample.Buttons.ButtonActivity;
 import com.example.vinsergey.androidjavaexample.EditText.EditTextActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.LayoutsActivity;
 import com.example.vinsergey.androidjavaexample.TextView.TextViewActivity;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityMainDrawerBinding;
+import java.util.jar.Manifest;
 
 public class MainDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,10 +33,10 @@ public class MainDrawerActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main_drawer);
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -85,9 +85,9 @@ public class MainDrawerActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_light_theme) {
             //TODO changer style
-            return true;
+            setTheme(R.style.AppTheme);
         } else if (id == R.id.action_dark_theme) {
-            return true;
+            setTheme(R.style.AppThemeDark);
         }
 
         return super.onOptionsItemSelected(item);

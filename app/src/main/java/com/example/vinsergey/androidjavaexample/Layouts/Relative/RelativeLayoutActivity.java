@@ -26,7 +26,7 @@ public class RelativeLayoutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (binding.imgAndroidIcon.getVisibility() == View.VISIBLE) {
                     binding.imgAndroidIcon.setVisibility(View.GONE);
-                    binding.imgAndroidIcon.setVisibility(View.VISIBLE);
+                    binding.imgAndroidIconUp.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -36,7 +36,7 @@ public class RelativeLayoutActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (binding.imgAndroidIconUp.getVisibility() == View.VISIBLE) {
                     binding.imgAndroidIconUp.setVisibility(View.GONE);
-                    binding.imgAndroidIconUp.setVisibility(View.VISIBLE);
+                    binding.imgAndroidIcon.setVisibility(View.VISIBLE);
                 }
             }
         });
