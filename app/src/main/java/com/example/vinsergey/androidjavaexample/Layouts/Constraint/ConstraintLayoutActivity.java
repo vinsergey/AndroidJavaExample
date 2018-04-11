@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import com.example.vinsergey.androidjavaexample.R;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityConstraintLayoutBinding;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
+
 import java.util.Objects;
 import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Constants.*;
 
@@ -22,6 +24,10 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
         super.onCreate(savedInstanceState);
 
         ActivityConstraintLayoutBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_constraint_layout);

@@ -3,6 +3,8 @@ package com.example.vinsergey.androidjavaexample.Layouts.Grid;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.vinsergey.androidjavaexample.R;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
+
 import java.util.Objects;
 
 public class GridLayoutActivity extends AppCompatActivity {
@@ -11,6 +13,10 @@ public class GridLayoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_layout);
 

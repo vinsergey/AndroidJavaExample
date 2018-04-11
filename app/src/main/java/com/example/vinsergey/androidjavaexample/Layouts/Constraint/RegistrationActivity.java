@@ -11,6 +11,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 import com.example.vinsergey.androidjavaexample.R;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityRegistrationBinding;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
+
 import java.util.Objects;
 import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Constants.*;
 
@@ -23,6 +25,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
         super.onCreate(savedInstanceState);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

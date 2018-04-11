@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Toast;
 import com.example.vinsergey.androidjavaexample.R;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityLoginBinding;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
+
 import java.util.Objects;
 import static com.example.vinsergey.androidjavaexample.Layouts.Constraint.Constants.*;
 
@@ -21,6 +23,10 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
         super.onCreate(savedInstanceState);
 
         final ActivityLoginBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_login);

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import com.example.vinsergey.androidjavaexample.R;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityEditTextBinding;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
+
 import java.util.Objects;
 
 public class EditTextActivity extends AppCompatActivity {
@@ -15,6 +17,10 @@ public class EditTextActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
         super.onCreate(savedInstanceState);
 
         ActivityEditTextBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_text);

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.example.vinsergey.androidjavaexample.R;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityLinearLayoutsBinding;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
 
 import java.util.Objects;
 
@@ -22,6 +23,10 @@ public class LinearLayoutsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
         super.onCreate(savedInstanceState);
 
         ActivityLinearLayoutsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_linear_layouts);

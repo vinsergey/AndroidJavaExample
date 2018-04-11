@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import com.example.vinsergey.androidjavaexample.R;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityButtonBinding;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
+
 import java.util.Objects;
 
 public class ButtonActivity extends AppCompatActivity {
@@ -13,9 +15,12 @@ public class ButtonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        //setTheme(R.style.AppThemeDark);
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
+        super.onCreate(savedInstanceState);
 
         ActivityButtonBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_button);
 

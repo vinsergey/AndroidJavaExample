@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import com.example.vinsergey.androidjavaexample.R;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityRelativeLayoutBinding;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
 
 import java.util.Objects;
 
@@ -16,6 +17,10 @@ public class RelativeLayoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
         super.onCreate(savedInstanceState);
 
         final ActivityRelativeLayoutBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_relative_layout);

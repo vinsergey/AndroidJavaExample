@@ -1,8 +1,10 @@
 package com.example.vinsergey.androidjavaexample;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -19,7 +21,6 @@ import com.example.vinsergey.androidjavaexample.EditText.EditTextActivity;
 import com.example.vinsergey.androidjavaexample.Layouts.LayoutsActivity;
 import com.example.vinsergey.androidjavaexample.TextView.TextViewActivity;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityMainDrawerBinding;
-import java.util.jar.Manifest;
 
 public class MainDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,12 +29,22 @@ public class MainDrawerActivity extends AppCompatActivity
     private static final String KEY_BUTTON = "button";
     private static final String KEY_TEXT_VIEW = "text_view";
     private static final String KEY_EDIT_TEXT = "edit_text";
+    private static final String PREFS_NAME = "prefs";
+    private static final String PREF_DARK_THEME = "dark_theme";
 
     private ActivityMainDrawerBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.AppTheme);
+
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        boolean useDarkTheme = preferences.getBoolean(PREF_DARK_THEME, false);
+
+        if(useDarkTheme) {
+            setTheme(R.style.AppTheme_Dark_NoActionBar);
+            themeSwitcher.setState(true);
+        }
+
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main_drawer);
@@ -57,6 +68,18 @@ public class MainDrawerActivity extends AppCompatActivity
         toggle.syncState();
 
         binding.navView.setNavigationItemSelectedListener(this);
+    }
+
+    private void switchTheme(boolean darkTheme) {
+        SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
+        editor.putBoolean(PREF_DARK_THEME, darkTheme);
+        editor.apply();
+        themeSwitcher.setState(darkTheme);
+
+        Intent intent = getIntent();
+        finish();
+
+        startActivity(intent);
     }
 
     @Override
@@ -84,10 +107,9 @@ public class MainDrawerActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_light_theme) {
-            //TODO changer style
-            setTheme(R.style.AppTheme);
+            switchTheme(false);
         } else if (id == R.id.action_dark_theme) {
-            setTheme(R.style.AppThemeDark);
+            switchTheme(true);
         }
 
         return super.onOptionsItemSelected(item);
@@ -95,7 +117,7 @@ public class MainDrawerActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 

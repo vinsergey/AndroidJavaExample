@@ -13,6 +13,7 @@ import com.example.vinsergey.androidjavaexample.Layouts.Relative.RelativeLayoutA
 import com.example.vinsergey.androidjavaexample.Layouts.Table.TableLayoutActivity;
 import com.example.vinsergey.androidjavaexample.R;
 import com.example.vinsergey.androidjavaexample.databinding.ActivityLayoutsBinding;
+import com.example.vinsergey.androidjavaexample.themeSwitcher;
 
 import java.util.Objects;
 
@@ -31,6 +32,10 @@ public class LayoutsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (themeSwitcher.getState()) {
+            setTheme(R.style.AppTheme_Dark);
+        }
+
         super.onCreate(savedInstanceState);
 
         ActivityLayoutsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_layouts);
